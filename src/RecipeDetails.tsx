@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Recipe, detailsProps } from "./interfaces";
+import { detailsProps } from "./interfaces";
 
 function RecipeDetails(props: detailsProps){
 
@@ -7,7 +7,7 @@ function RecipeDetails(props: detailsProps){
     const [selectedRecipe, setSelectedRecipe] = useState(props.emptyRecipe);
 
     useEffect(() => {
-        if (props.selectedRecipe.id!=-1) {
+        if (props.selectedRecipe.id!==-1) {
             setSelectedRecipe(props.selectedRecipe);
         } else{
             setSelectedRecipe(props.emptyRecipe);
@@ -25,7 +25,7 @@ function RecipeDetails(props: detailsProps){
     }
     function handleSubmit(e: FormEvent){
         e.preventDefault();
-        if(selectedRecipe.id==-1){
+        if(selectedRecipe.id===-1){
             props.onSave(selectedRecipe);
             setSelectedRecipe(props.emptyRecipe);
         } else {
@@ -44,7 +44,7 @@ function RecipeDetails(props: detailsProps){
             <label htmlFor='field3'>Instructions: </label><br />
             <input type='text' id='field3' name='instructions' value={selectedRecipe.instructions} onChange={handleInputChange} required></input><br/>
             <label htmlFor='field4'>Cooking Time (minutes):</label><br/>
-            <input type='number' id='field4' name='cookingTime' value={selectedRecipe.cookingTime} onChange={handleInputChange} required></input><br/>
+            <input type='number' id='field4' name='cookingTime' min="1" value={selectedRecipe.cookingTime} onChange={handleInputChange} required></input><br/>
             <label htmlFor='field5'>Publication Date:</label><br/>
             <input type='date' id='field5' name='publicationDate' value={selectedRecipe.publicationDate.toISOString().substring(0,10)} onChange={handleDateChange} required></input><br/>
             <button type='submit' id='saveButton'>Save</button>
