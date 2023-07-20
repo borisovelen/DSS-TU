@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+:root{
+    --main: #f2e3c6;
+    --second: #2b2b2b;
+    --third:#353634;
+    --button: #e6334b;
+}
+body{
+    background-color: var(--main);
+    color: var(--second);
+}
+/* Style for main section */
+.main{
+    margin:0px;
+}
+.content-list{
+    padding:2%;
+}
+.content-details{
+    padding:2%;
+    background-color:var(--third);
+    color: var(--main);
+    text-align: center;
+    position: static;
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color:whitesmoke;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button{
+    background-color: var(--button);
+    margin:0 5px;
+    padding:5px 20px;
+    border: 0px;
+    transition:0.5s all;
+    border-radius: 4px;
+}
+form button:hover{
+    transition:0.5s all;
+    background-color: var(--main);
+}
+li button{
+    background-color: var(--button);
+    padding:5px 20px;
+    border: 0px;
+    transition:0.5s all;
+    border-radius: 4px;
+    color:var(--main);
+}
+li button:hover{
+    transition:0.5s all;
+    background-color: #a71f1f;
+    box-shadow:1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+/* Style for header/footer */
+.header{
+    background-color: var(--second);
+    color: var(--main);
+    padding:1%;
+    position: sticky;
+}
+.footer{
+    background-color: var(--second);
+    color: var(--main);
+    padding:1%;
+    text-align:center;
+}
+
+.recipe-list{
+    list-style: none;
+    justify-content: space-between;
+    padding:0;
+}
+
+
+.title-container{
+    color:whitesmoke;
+    padding:20px 0;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--third);
+    font-size: 24px;
+    border-bottom: var(--third);
+    border-radius: 5px 5px 0 0;
+}
+.id{
+    display:none;
+}
+.field1{
+    margin:0px;
+}
+.deleteButton{
+    margin:auto;
+}
+.description-container{
+    width: 80%;
+    margin: 20px auto;
+}
+.list-item{
+    background-color:whitesmoke;
+    border-radius: 5px;
+    padding: 0;
+    padding-bottom: 20px;
+    width: 45%;
+    margin:2.5%;
+    box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.1);
+}
+.footer p {
+    margin:10px;
+}
+.description-container p span {
+    font-weight: 700;
+}
+
+.main {
+    min-height: 81vh;
+}
+
+
+@media only screen and (max-width:1024px) {
+    .list-item{
+        width:80%;
+    }    
+    .recipe-list{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
